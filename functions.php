@@ -41,7 +41,8 @@ require_once('text-wrangler.php');
 add_filter('gettext', array('Thirty_Ten_Text_Wrangler', 'site_generator'), 10, 4);
 add_filter('gettext', array('Thirty_Ten_Text_Wrangler', 'single_meta'), 10, 4);
 
-require_once('options.php');
+//require_once('options.php');
+
 
 
 ?>
