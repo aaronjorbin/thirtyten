@@ -34,8 +34,8 @@ function thirtyten_layout_text(){
 
 function thirtyten_options_page(){
 
-	//if (! current_user_can() )
-
+	if (! current_user_can('edit_themes') )
+		wp_die('Do, or do not. There is no try');
 	echo "<div>";
 	echo "<h2>Hello</h2>";
 	echo '<form action="options.php" method="post">';
@@ -55,6 +55,8 @@ add_action('init', 'thirtyten_add_layout_css');
 
 function thirtyten_add_layout_css(){
 	$option = get_option('thirtyten');
+	if (strlen($option) <= 1 )
+		$option = '3c-fixed';
 	$src =  get_stylesheet_directory_uri() . "/$option.css";
 	wp_enqueue_style( 'thirtyten_layout', $src );
 }
