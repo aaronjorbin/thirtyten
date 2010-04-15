@@ -8,7 +8,7 @@ function thirtyten_add_options_page(){
 }
 
 function thirtyten_settings(){
-	register_setting( 'thirtyten-group', 'thirtyten');
+	register_setting( 'thirtyten-group', 'thirtyten', 'thirtyten_option_validate');
 	add_settings_section('thirtyten_layout', '', 'thirtyten_layout_text', 'thirtyten_layout');
 	add_settings_field('thirtyten_layout_field', 'Layout', 'thirtyten_layout_field_display', 'thirtyten_layout', 'thirtyten_layout');
 }
@@ -48,6 +48,13 @@ function thirtyten_options_page(){
 	<?php
 	echo "</div>";
 
+}
+
+function thirtyten_option_validate($input){
+	if ($input == '3c-fixed' || $input == '3c-r-fixed-primary' || $input == '3c-l-fixed-primary')
+		return $input;
+	else
+		return '3c-fixed';
 }
 
 
