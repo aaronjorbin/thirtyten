@@ -3,7 +3,7 @@
 add_action('admin_menu', 'thirtyten_add_options_page');
 
 function thirtyten_add_options_page(){
-	add_options_page( 'Thirty Ten Options', 'Thirty Ten', 'edit_themes', 'thirtyten', 'thirtyten_options_page');
+	add_options_page( 'Thirty Ten Options', 'Thirty Ten', 'edit_theme_options', 'thirtyten', 'thirtyten_options_page');
 	add_action( 'admin_init', 'thirtyten_settings' );
 }
 
@@ -34,7 +34,7 @@ function thirtyten_layout_text(){
 
 function thirtyten_options_page(){
 
-	if (! current_user_can('edit_themes') )
+	if (! current_user_can('edit_theme_options') )
 		wp_die('Do, or do not. There is no try');
 	echo "<div>";
 	echo "<h2>Hello</h2>";
