@@ -65,5 +65,7 @@ function thirtyten_add_layout_css(){
 	if (strlen($option) <= 1 )
 		$option = '3c-fixed';
 	$src =  get_stylesheet_directory_uri() . "/$option.css";
-	wp_enqueue_style( 'thirtyten_layout', $src );
+	if (! is_admin() )
+		wp_enqueue_style( 'thirtyten_layout', $src );
+
 }
