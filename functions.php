@@ -24,7 +24,7 @@ function thirtyten_setup(){
 	));
 
 	/* Remove the twenty ten keep reading link and add my own */
-	remove_filter( 'excerpt_more', 'twentyten_excerpt_more' );
+	remove_filter( 'excerpt_more', 'twentyten_auto_excerpt_more' );
 	add_filter ('excerpt_more', 'thirtyten_excerpt_more' );
 
 }

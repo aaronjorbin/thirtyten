@@ -3,8 +3,8 @@
 class Thirty_Ten_Text_Wrangler {
   function site_generator($translation, $text, $domain) {
   $translations = &get_translations_for_domain( $domain );
-  if ( $text == 'Proudly powered by <span id="generator-link">%s</span>.' ) {
-   return $translations->translate( 'Proudly powered by<span id="jorbin-link"><a href="http://aaron.jorb.in">Aaron Jorbin\'s Idea</a></span>, <apan id="hockley-link"><a href="http://www.flickr.com/photos/ahockley">Aaron Hockley / Hockley Photography</a></apan>, and <span id="generator-link"%s</span>' );
+  if ( $text == 'Proudly powered by %s.' ) {
+   return $translations->translate( 'Proudly powered by %s</a>, <span id="jorbin-link"><a href="http://aaron.jorb.in">Aaron Jorbin\'s Idea</a></span>, and <apan id="hockley-link"><a href="http://www.flickr.com/photos/ahockley">Aaron Hockley / Hockley Photography</apan>' );
   }
   return $translation;
  }
